@@ -1,0 +1,99 @@
+{
+    "os": "Linux-5.10.102.1-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+    "python": "3.9.16",
+    "heartbeatAt": "2023-10-19T05:58:06.385642",
+    "startedAt": "2023-10-19T05:58:04.142874",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/chen/ANN/2023-HW2/codes/cnn/main.py",
+    "codePath": "main.py",
+    "host": "LAPTOP-I34U4N77",
+    "username": "chen",
+    "executable": "/home/chen/anaconda3/envs/d2l/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2295.5979999999995,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.598,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 250.98248672485352,
+        "used": 80.81013488769531
+    },
+    "gpu": "NVIDIA GeForce MX450",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce MX450",
+            "memory_total": 2147483648
+        }
+    ],
+    "memory": {
+        "total": 10.797035217285156
+    }
+}

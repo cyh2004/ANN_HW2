@@ -1,0 +1,38 @@
+
+use device: cuda
+Model(
+  (conv1): Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
+  (bn1): BatchNorm2d()
+  (relu1): ReLU()
+  (dropout1): Dropout()
+  (maxp1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(128, 16, kernel_size=(5, 5), stride=(1, 1))
+  (bn2): BatchNorm2d()
+  (relu2): ReLU()
+  (dropout2): Dropout()
+  (maxp2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (fc): Linear(in_features=400, out_features=10, bias=True)
+  (loss): CrossEntropyLoss()
+)
+torch.Size([100, 3, 32, 32])
+torch.Size([100, 6, 28, 28])
+torch.Size([100, 6, 28, 28])
+torch.Size([100, 6, 28, 28])
+torch.Size([100, 6, 28, 28])
+torch.Size([100, 6, 14, 14])
+Traceback (most recent call last):
+  File "/home/chen/ANN/2023-HW2/codes/cnn/main.py", line 137, in <module>
+    train_acc, train_loss = train_epoch(mlp_model, X_train, y_train, optimizer)
+  File "/home/chen/ANN/2023-HW2/codes/cnn/main.py", line 65, in train_epoch
+    loss_, acc_ = model(X_batch, y_batch)
+  File "/home/chen/anaconda3/envs/d2l/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/chen/ANN/2023-HW2/codes/cnn/model.py", line 97, in forward
+    y_hat = self.conv2(y_hat)
+  File "/home/chen/anaconda3/envs/d2l/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/chen/anaconda3/envs/d2l/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/chen/anaconda3/envs/d2l/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Given groups=1, weight of size [16, 128, 5, 5], expected input[100, 6, 14, 14] to have 128 channels, but got 6 channels instead

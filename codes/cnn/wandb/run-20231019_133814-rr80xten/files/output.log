@@ -1,0 +1,30 @@
+
+use device: cuda
+Model(
+  (conv1): Conv2d(3, 6, kernel_size=(5, 5), stride=(1, 1))
+  (bn1): BatchNorm2d()
+  (relu1): ReLU()
+  (dropout1): Dropout()
+  (maxp1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (bn2): BatchNorm2d()
+  (relu2): ReLU()
+  (dropout2): Dropout()
+  (maxp2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (fc): Linear(in_features=400, out_features=10, bias=True)
+  (loss): CrossEntropyLoss()
+)
+Traceback (most recent call last):
+  File "/home/chen/ANN/2023-HW2/codes/cnn/main.py", line 140, in <module>
+    val_acc, val_loss = valid_epoch(mlp_model, X_val, y_val)
+  File "/home/chen/ANN/2023-HW2/codes/cnn/main.py", line 85, in valid_epoch
+    loss_, acc_ = model(X_batch, y_batch)
+  File "/home/chen/anaconda3/envs/d2l/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/chen/ANN/2023-HW2/codes/cnn/model.py", line 89, in forward
+    y_hat = self.bn1(y_hat)
+  File "/home/chen/anaconda3/envs/d2l/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/chen/ANN/2023-HW2/codes/cnn/model.py", line 37, in forward
+    output = self.weight.reshape((1, self.weight.shape[0], 1, 1)) * (input - self.running_mean.reshape((1, self.running_mean.shape[0], 1, 1))) / torch.sqrt(self.running_var.reshape((1, self.running_var.shape[0], 1, 1)) + 1e-5) + self.bias.reshape((1, self.bias.shape[0], 1, 1))
+RuntimeError: shape '[1, 1, 1, 1]' is invalid for input of size 36

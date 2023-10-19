@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/chen/ANN/2023-HW2/codes/cnn/main.py", line 123, in <module>
+    mlp_model = Model(X_train.shape[2], X_train.shape[3], X_train.shape[1], drop_rate=args.drop_rate)
+  File "/home/chen/ANN/2023-HW2/codes/cnn/model.py", line 67, in __init__
+    self.conv2 = nn.Conv2d(128, 32)
+TypeError: __init__() missing 1 required positional argument: 'kernel_size'
