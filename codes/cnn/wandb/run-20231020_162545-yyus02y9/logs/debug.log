@@ -1,0 +1,33 @@
+2023-10-20 16:25:45,258 INFO    MainThread:3361001 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-10-20 16:25:45,258 INFO    MainThread:3361001 [wandb_setup.py:_flush():76] Configure stats pid to 3361001
+2023-10-20 16:25:45,258 INFO    MainThread:3361001 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2023-10-20 16:25:45,258 INFO    MainThread:3361001 [wandb_setup.py:_flush():76] Loading settings from /dysData/ANN_HW2/codes/cnn/wandb/settings
+2023-10-20 16:25:45,258 INFO    MainThread:3361001 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-10-20 16:25:45,258 INFO    MainThread:3361001 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-10-20 16:25:45,258 INFO    MainThread:3361001 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'codes/cnn/main.py', 'program_abspath': '/dysData/ANN_HW2/codes/cnn/main.py', 'program': 'main.py'}
+2023-10-20 16:25:45,259 INFO    MainThread:3361001 [wandb_init.py:_log_setup():528] Logging user logs to /dysData/ANN_HW2/codes/cnn/wandb/run-20231020_162545-yyus02y9/logs/debug.log
+2023-10-20 16:25:45,259 INFO    MainThread:3361001 [wandb_init.py:_log_setup():529] Logging internal logs to /dysData/ANN_HW2/codes/cnn/wandb/run-20231020_162545-yyus02y9/logs/debug-internal.log
+2023-10-20 16:25:45,259 INFO    MainThread:3361001 [wandb_init.py:init():568] calling init triggers
+2023-10-20 16:25:45,259 INFO    MainThread:3361001 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'batch_size': 100, 'num_epochs': 40, 'learning_rate': 0.001, 'drop_rate': 0.2}
+2023-10-20 16:25:45,259 INFO    MainThread:3361001 [wandb_init.py:init():618] starting backend
+2023-10-20 16:25:45,259 INFO    MainThread:3361001 [wandb_init.py:init():622] setting up manager
+2023-10-20 16:25:45,261 INFO    MainThread:3361001 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-10-20 16:25:45,262 INFO    MainThread:3361001 [wandb_init.py:init():628] backend started and connected
+2023-10-20 16:25:45,264 INFO    MainThread:3361001 [wandb_init.py:init():720] updated telemetry
+2023-10-20 16:25:45,278 INFO    MainThread:3361001 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-10-20 16:25:46,603 INFO    MainThread:3361001 [wandb_run.py:_on_init():2220] communicating current version
+2023-10-20 16:25:51,606 INFO    MainThread:3361001 [wandb_run.py:_on_init():2229] got version response 
+2023-10-20 16:25:51,606 INFO    MainThread:3361001 [wandb_init.py:init():804] starting run threads in backend
+2023-10-20 16:25:53,071 INFO    MainThread:3361001 [wandb_run.py:_console_start():2199] atexit reg
+2023-10-20 16:25:53,071 INFO    MainThread:3361001 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-10-20 16:25:53,071 INFO    MainThread:3361001 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-10-20 16:25:53,071 INFO    MainThread:3361001 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-10-20 16:25:53,072 INFO    MainThread:3361001 [wandb_init.py:init():845] run started, returning control to user process
+2023-10-20 17:05:22,649 INFO    MainThread:3361001 [wandb_run.py:_finish():1934] finishing run smallstarting/ann_hw2/yyus02y9
+2023-10-20 17:05:22,649 INFO    MainThread:3361001 [wandb_run.py:_atexit_cleanup():2168] got exitcode: 0
+2023-10-20 17:05:22,649 INFO    MainThread:3361001 [wandb_run.py:_restore():2151] restore
+2023-10-20 17:05:22,649 INFO    MainThread:3361001 [wandb_run.py:_restore():2157] restore done
+2023-10-20 17:05:30,263 INFO    MainThread:3361001 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2023-10-20 17:05:30,265 INFO    MainThread:3361001 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2023-10-20 17:05:30,272 INFO    MainThread:3361001 [wandb_run.py:_footer_sync_info():3558] logging synced files

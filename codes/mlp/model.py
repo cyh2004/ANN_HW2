@@ -85,3 +85,69 @@ class Model(nn.Module):
 		acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
 
 		return loss, acc
+
+class Model_noDrop(nn.Module):
+	def __init__(self, in_num, nclasses, drop_rate=0.5):
+		super(Model_noDrop, self).__init__()
+		# TODO START
+		# Define your layers here
+		self.fc1 = nn.Linear(in_num, 1024)
+		self.bn1 = BatchNorm1d(1024)
+		self.relu1 = nn.ReLU()
+		# self.dropout1 = Dropout(drop_rate)
+		self.fc2 = nn.Linear(1024, nclasses)
+		# TODO END
+		self.loss = nn.CrossEntropyLoss()
+
+	def forward(self, x, y=None):
+		# TODO START
+		# the 10-class prediction output is named as "logits"
+		y_hat = self.fc1(x)
+		y_hat = self.bn1(y_hat)
+		y_hat = self.relu1(y_hat)
+		# y_hat = self.dropout1(y_hat)
+		logits = self.fc2(y_hat)
+		
+		# TODO END
+
+		pred = torch.argmax(logits, 1)  # Calculate the prediction result
+		if y is None:
+			return pred
+		loss = self.loss(logits, y)
+		correct_pred = (pred.int() == y.int())
+		acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+
+		return loss, acc
+
+class Model_noBN(nn.Module):
+	def __init__(self, in_num, nclasses, drop_rate=0.5):
+		super(Model_noBN, self).__init__()
+		# TODO START
+		# Define your layers here
+		self.fc1 = nn.Linear(in_num, 1024)
+		# self.bn1 = BatchNorm1d(1024)
+		self.relu1 = nn.ReLU()
+		self.dropout1 = Dropout(drop_rate)
+		self.fc2 = nn.Linear(1024, nclasses)
+		# TODO END
+		self.loss = nn.CrossEntropyLoss()
+
+	def forward(self, x, y=None):
+		# TODO START
+		# the 10-class prediction output is named as "logits"
+		y_hat = self.fc1(x)
+		# y_hat = self.bn1(y_hat)
+		y_hat = self.relu1(y_hat)
+		y_hat = self.dropout1(y_hat)
+		logits = self.fc2(y_hat)
+		
+		# TODO END
+
+		pred = torch.argmax(logits, 1)  # Calculate the prediction result
+		if y is None:
+			return pred
+		loss = self.loss(logits, y)
+		correct_pred = (pred.int() == y.int())
+		acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+
+		return loss, acc

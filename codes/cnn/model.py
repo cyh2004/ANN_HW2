@@ -109,3 +109,216 @@ class Model(nn.Module):
 		acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
 
 		return loss, acc
+
+class Model_noDrop(nn.Module):
+	def __init__(self, H, W, channels, drop_rate=0.5):
+		super(Model_noDrop, self).__init__()
+		# TODO START
+		# Define your layers here
+		# x: [bs, 3, 32, 32]
+		self.conv1 = nn.Conv2d(channels, 128, 5)
+		# x: [bs, 128, 28, 28]
+		self.bn1 = BatchNorm2d(128)
+		self.relu1 = nn.ReLU()
+		# self.dropout1 = Dropout(drop_rate)
+		# x: [bs, 128, 28, 28]
+		self.maxp1 = nn.MaxPool2d(2)
+		# x: [bs, 128, 14, 14]
+		self.conv2 = nn.Conv2d(128, 128, 5)
+		# x: [bs, 128, 10, 10]
+		self.bn2 = BatchNorm2d(128)
+		self.relu2 = nn.ReLU()
+		# self.dropout2 = Dropout(drop_rate)
+		# x: [bs, 128, 10, 10]
+		self.maxp2 = nn.MaxPool2d(2)
+		# x: [bs, 128, 5, 5]
+		self.fc = nn.Linear(128*5*5, 10)
+		# TODO END
+		self.loss = nn.CrossEntropyLoss()
+
+	def forward(self, x, y=None):	
+		# TODO START
+		# the 10-class prediction output is named as "logits"
+		y_hat = self.conv1(x)
+		y_hat = self.bn1(y_hat)
+		y_hat = self.relu1(y_hat)
+		# y_hat = self.dropout1(y_hat)
+		y_hat = self.maxp1(y_hat)
+		y_hat = self.conv2(y_hat)
+		y_hat = self.bn2(y_hat)
+		y_hat = self.relu2(y_hat)
+		# y_hat = self.dropout2(y_hat)
+		y_hat = self.maxp2(y_hat)
+		y_hat = y_hat.reshape((y_hat.shape[0], -1))
+		y_hat = self.fc(y_hat)
+		logits = y_hat
+		# TODO END
+
+		pred = torch.argmax(logits, 1)  # Calculate the prediction result
+		if y is None:
+			return pred
+		loss = self.loss(logits, y)
+		correct_pred = (pred.int() == y.int())
+		acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+
+		return loss, acc
+class Model_noBN(nn.Module):
+	def __init__(self, H, W, channels, drop_rate=0.5):
+		super(Model_noBN, self).__init__()
+		# TODO START
+		# Define your layers here
+		# x: [bs, 3, 32, 32]
+		self.conv1 = nn.Conv2d(channels, 128, 5)
+		# x: [bs, 128, 28, 28]
+		# self.bn1 = BatchNorm2d(128)
+		self.relu1 = nn.ReLU()
+		self.dropout1 = Dropout(drop_rate)
+		# x: [bs, 128, 28, 28]
+		self.maxp1 = nn.MaxPool2d(2)
+		# x: [bs, 128, 14, 14]
+		self.conv2 = nn.Conv2d(128, 128, 5)
+		# x: [bs, 128, 10, 10]
+		# self.bn2 = BatchNorm2d(128)
+		self.relu2 = nn.ReLU()
+		self.dropout2 = Dropout(drop_rate)
+		# x: [bs, 128, 10, 10]
+		self.maxp2 = nn.MaxPool2d(2)
+		# x: [bs, 128, 5, 5]
+		self.fc = nn.Linear(128*5*5, 10)
+		# TODO END
+		self.loss = nn.CrossEntropyLoss()
+
+	def forward(self, x, y=None):	
+		# TODO START
+		# the 10-class prediction output is named as "logits"
+		y_hat = self.conv1(x)
+		# y_hat = self.bn1(y_hat)
+		y_hat = self.relu1(y_hat)
+		y_hat = self.dropout1(y_hat)
+		y_hat = self.maxp1(y_hat)
+		y_hat = self.conv2(y_hat)
+		# y_hat = self.bn2(y_hat)
+		y_hat = self.relu2(y_hat)
+		y_hat = self.dropout2(y_hat)
+		y_hat = self.maxp2(y_hat)
+		y_hat = y_hat.reshape((y_hat.shape[0], -1))
+		y_hat = self.fc(y_hat)
+		logits = y_hat
+		# TODO END
+
+		pred = torch.argmax(logits, 1)  # Calculate the prediction result
+		if y is None:
+			return pred
+		loss = self.loss(logits, y)
+		correct_pred = (pred.int() == y.int())
+		acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+
+		return loss, acc
+
+# 先过激活函数再过BN
+class Model_switch1(nn.Module):
+	def __init__(self, H, W, channels, drop_rate=0.5):
+		super(Model_switch1, self).__init__()
+		# TODO START
+		# Define your layers here
+		# x: [bs, 3, 32, 32]
+		self.conv1 = nn.Conv2d(channels, 128, 5)
+		# x: [bs, 128, 28, 28]
+		self.bn1 = BatchNorm2d(128)
+		self.relu1 = nn.ReLU()
+		self.dropout1 = Dropout(drop_rate)
+		# x: [bs, 128, 28, 28]
+		self.maxp1 = nn.MaxPool2d(2)
+		# x: [bs, 128, 14, 14]
+		self.conv2 = nn.Conv2d(128, 128, 5)
+		# x: [bs, 128, 10, 10]
+		self.bn2 = BatchNorm2d(128)
+		self.relu2 = nn.ReLU()
+		self.dropout2 = Dropout(drop_rate)
+		# x: [bs, 128, 10, 10]
+		self.maxp2 = nn.MaxPool2d(2)
+		# x: [bs, 128, 5, 5]
+		self.fc = nn.Linear(128*5*5, 10)
+		# TODO END
+		self.loss = nn.CrossEntropyLoss()
+
+	def forward(self, x, y=None):	
+		# TODO START
+		# the 10-class prediction output is named as "logits"
+		y_hat = self.conv1(x)
+		y_hat = self.relu1(y_hat)
+		y_hat = self.bn1(y_hat)
+		y_hat = self.dropout1(y_hat)
+		y_hat = self.maxp1(y_hat)
+		y_hat = self.conv2(y_hat)
+		y_hat = self.relu2(y_hat)
+		y_hat = self.bn2(y_hat)
+		y_hat = self.dropout2(y_hat)
+		y_hat = self.maxp2(y_hat)
+		y_hat = y_hat.reshape((y_hat.shape[0], -1))
+		y_hat = self.fc(y_hat)
+		logits = y_hat
+		# TODO END
+
+		pred = torch.argmax(logits, 1)  # Calculate the prediction result
+		if y is None:
+			return pred
+		loss = self.loss(logits, y)
+		correct_pred = (pred.int() == y.int())
+		acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+
+		return loss, acc
+
+# 先过Maxpool再过Dropout
+class Model_switch2(nn.Module):
+	def __init__(self, H, W, channels, drop_rate=0.5):
+		super(Model_switch2, self).__init__()
+		# TODO START
+		# Define your layers here
+		# x: [bs, 3, 32, 32]
+		self.conv1 = nn.Conv2d(channels, 128, 5)
+		# x: [bs, 128, 28, 28]
+		self.bn1 = BatchNorm2d(128)
+		self.relu1 = nn.ReLU()
+		self.dropout1 = Dropout(drop_rate)
+		# x: [bs, 128, 28, 28]
+		self.maxp1 = nn.MaxPool2d(2)
+		# x: [bs, 128, 14, 14]
+		self.conv2 = nn.Conv2d(128, 128, 5)
+		# x: [bs, 128, 10, 10]
+		self.bn2 = BatchNorm2d(128)
+		self.relu2 = nn.ReLU()
+		self.dropout2 = Dropout(drop_rate)
+		# x: [bs, 128, 10, 10]
+		self.maxp2 = nn.MaxPool2d(2)
+		# x: [bs, 128, 5, 5]
+		self.fc = nn.Linear(128*5*5, 10)
+		# TODO END
+		self.loss = nn.CrossEntropyLoss()
+
+	def forward(self, x, y=None):	
+		# TODO START
+		# the 10-class prediction output is named as "logits"
+		y_hat = self.conv1(x)
+		y_hat = self.bn1(y_hat)
+		y_hat = self.relu1(y_hat)
+		y_hat = self.maxp1(y_hat)
+		y_hat = self.dropout1(y_hat)
+		y_hat = self.conv2(y_hat)
+		y_hat = self.bn2(y_hat)
+		y_hat = self.relu2(y_hat)
+		y_hat = self.maxp2(y_hat)
+		y_hat = self.dropout2(y_hat)
+		y_hat = y_hat.reshape((y_hat.shape[0], -1))
+		y_hat = self.fc(y_hat)
+		logits = y_hat
+		# TODO END
+
+		pred = torch.argmax(logits, 1)  # Calculate the prediction result
+		if y is None:
+			return pred
+		loss = self.loss(logits, y)
+		correct_pred = (pred.int() == y.int())
+		acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+
+		return loss, acc

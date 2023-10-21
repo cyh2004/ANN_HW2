@@ -10,7 +10,7 @@ import torch.nn as nn
 import torch.optim as optim
 import wandb
 
-from model import Model
+from model import Model, Model_noBN, Model_noDrop
 from load_data import load_cifar_2d
 
 parser = argparse.ArgumentParser()
@@ -33,6 +33,10 @@ parser.add_argument('--inference_version', type=int, default=0,
 	help='The version for inference. Set 0 to use latest checkpoint. Default: 0')
 parser.add_argument('--nclasses', type=int, default=10,
 	help='Num of classes. Default: 10')
+parser.add_argument('--noDropout', action="store_true", default=False,
+	help="True to use dropout. Default: False")
+parser.add_argument('--noBatchNorm', action="store_true", default=False,
+	help="True to use batch normalization. Default: False")
 args = parser.parse_args()
 
 
@@ -66,12 +70,6 @@ def train_epoch(model, X, y, optimizer): # Training Process
 
 		loss_.backward()
 		optimizer.step()
-  
-		wandb.log({
-			"train_step_loss": loss_.cpu().data.numpy(),
-			"train_step_acc": acc_.cpu().data.numpy(),
-		})
-
 		loss += loss_.cpu().data.numpy()
 		acc += acc_.cpu().data.numpy()
 		st, ed = ed, ed + args.batch_size
@@ -88,12 +86,6 @@ def valid_epoch(model, X, y): # Valid Process
 	while st < len(X) and ed <= len(X):
 		X_batch, y_batch = torch.from_numpy(X[st:ed]).to(device), torch.from_numpy(y[st:ed]).to(device)
 		loss_, acc_ = model(X_batch, y_batch)
-  
-		wandb.log({
-			"val_step_loss": loss_.cpu().data.numpy(),
-			"val_step_acc": acc_.cpu().data.numpy(),
-		})
-
 		loss += loss_.cpu().data.numpy()
 		acc += acc_.cpu().data.numpy()
 
@@ -112,9 +104,16 @@ def inference(model, X): # Test Process
 
 if __name__ == '__main__':
     
+	if args.noDropout:
+		name_suffix = "noDropout"
+	elif args.noBatchNorm:
+		name_suffix = "noBatchNorm"
+	else:
+		name_suffix = ""
+    
 	wandb.init(
 		project="ann_hw2",
-		name="mlp",
+		name="mlp "+name_suffix,
 		config = {
 			'learning_rate': args.learning_rate,
 			'batch_size': args.batch_size,
@@ -130,7 +129,13 @@ if __name__ == '__main__':
 		X_train, X_test, y_train, y_test = load_cifar_2d(args.data_dir)
 		X_val, y_val = X_train[40000:], y_train[40000:]
 		X_train, y_train = X_train[:40000], y_train[:40000]
-		mlp_model = Model(X_train.shape[1], args.nclasses, drop_rate=args.drop_rate)
+		if args.noDropout:
+			model = Model_noDrop
+		elif args.noBatchNorm:
+			model = Model_noBN
+		else:
+			model = Model
+		mlp_model = model(X_train.shape[1], args.nclasses, drop_rate=args.drop_rate)
 		mlp_model.to(device)
 		print(mlp_model)
 		optimizer = optim.Adam(mlp_model.parameters(), lr=args.learning_rate)

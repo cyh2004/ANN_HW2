@@ -1,0 +1,624 @@
+2023-10-20 13:53:29,108 INFO    StreamThr :3305503 [internal.py:wandb_internal():86] W&B internal server running at pid: 3305503, started at: 2023-10-20 13:53:29.106966
+2023-10-20 13:53:29,110 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status
+2023-10-20 13:53:29,113 INFO    WriterThread:3305503 [datastore.py:open_for_write():85] open: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/run-wxf4lrmo.wandb
+2023-10-20 13:53:29,114 DEBUG   SenderThread:3305503 [sender.py:send():380] send: header
+2023-10-20 13:53:29,128 DEBUG   SenderThread:3305503 [sender.py:send():380] send: run
+2023-10-20 13:53:30,844 INFO    SenderThread:3305503 [dir_watcher.py:__init__():211] watching files in: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files
+2023-10-20 13:53:30,844 INFO    SenderThread:3305503 [sender.py:_start_run_threads():1122] run started: wxf4lrmo with start time 1697781209.106562
+2023-10-20 13:53:30,857 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: check_version
+2023-10-20 13:53:30,858 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: check_version
+2023-10-20 13:53:35,859 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: keepalive
+2023-10-20 13:53:35,859 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:53:35,865 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: run_start
+2023-10-20 13:53:35,881 DEBUG   HandlerThread:3305503 [system_info.py:__init__():32] System info init
+2023-10-20 13:53:35,881 DEBUG   HandlerThread:3305503 [system_info.py:__init__():47] System info init done
+2023-10-20 13:53:35,881 INFO    HandlerThread:3305503 [system_monitor.py:start():194] Starting system monitor
+2023-10-20 13:53:35,882 INFO    SystemMonitor:3305503 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-10-20 13:53:35,882 INFO    HandlerThread:3305503 [system_monitor.py:probe():214] Collecting system info
+2023-10-20 13:53:35,883 INFO    SystemMonitor:3305503 [interfaces.py:start():190] Started cpu monitoring
+2023-10-20 13:53:35,884 INFO    SystemMonitor:3305503 [interfaces.py:start():190] Started disk monitoring
+2023-10-20 13:53:35,887 INFO    SystemMonitor:3305503 [interfaces.py:start():190] Started gpu monitoring
+2023-10-20 13:53:35,888 INFO    SystemMonitor:3305503 [interfaces.py:start():190] Started memory monitoring
+2023-10-20 13:53:35,888 INFO    SystemMonitor:3305503 [interfaces.py:start():190] Started network monitoring
+2023-10-20 13:53:35,978 DEBUG   HandlerThread:3305503 [system_info.py:probe():196] Probing system
+2023-10-20 13:53:35,987 DEBUG   HandlerThread:3305503 [system_info.py:_probe_git():181] Probing git
+2023-10-20 13:53:36,003 DEBUG   HandlerThread:3305503 [system_info.py:_probe_git():189] Probing git done
+2023-10-20 13:53:36,003 DEBUG   HandlerThread:3305503 [system_info.py:probe():244] Probing system done
+2023-10-20 13:53:36,003 DEBUG   HandlerThread:3305503 [system_monitor.py:probe():223] {'os': 'Linux-5.13.0-30-generic-x86_64-with-glibc2.17', 'python': '3.8.18', 'heartbeatAt': '2023-10-20T05:53:35.978826', 'startedAt': '2023-10-20T05:53:29.100309', 'docker': None, 'cuda': None, 'args': ('--drop_rate', '0.2'), 'state': 'running', 'program': 'main.py', 'codePathLocal': 'main.py', 'codePath': 'codes/mlp/main.py', 'git': {'remote': 'git@github.com:cyh2004/ANN_HW2.git', 'commit': '0a9a2e63244b757e0da1bd5b9091b5b2661c9b9b'}, 'email': 'chenying21@mails.tsinghua.edu.cn', 'root': '/dysData/ANN_HW2', 'host': 'tianbeiwen-20231009-011635-eed0eab253ad-main-0', 'username': 'root', 'executable': '/dysData/miniconda3/envs/scribblekitti/bin/python', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 1755.525984375, 'min': 1500.0, 'max': 2900.0}, 'cpu_freq_per_core': [{'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 3348.339, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 3350.77, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2400.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 3389.472, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1470.663, 'min': 1500.0, 'max': 2900.0}, {'current': 2688.665, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 3391.348, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 3392.429, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 3366.609, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 3213.424, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 2900.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}, {'current': 1500.0, 'min': 1500.0, 'max': 2900.0}], 'disk': {'/': {'total': 14303.119140625, 'used': 7600.8846435546875}}, 'gpu': 'NVIDIA A100-SXM4-80GB', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}, {'name': 'NVIDIA A100-SXM4-80GB', 'memory_total': 85899345920}], 'memory': {'total': 2015.7335472106934}}
+2023-10-20 13:53:36,004 INFO    HandlerThread:3305503 [system_monitor.py:probe():224] Finished collecting system info
+2023-10-20 13:53:36,004 INFO    HandlerThread:3305503 [system_monitor.py:probe():227] Publishing system info
+2023-10-20 13:53:36,004 DEBUG   HandlerThread:3305503 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-10-20 13:53:36,004 DEBUG   HandlerThread:3305503 [system_info.py:_save_pip():68] Saving pip packages done
+2023-10-20 13:53:36,004 DEBUG   HandlerThread:3305503 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-10-20 13:53:36,848 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_created():271] file/dir created: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/conda-environment.yaml
+2023-10-20 13:53:36,849 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_created():271] file/dir created: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/requirements.txt
+2023-10-20 13:53:37,250 DEBUG   HandlerThread:3305503 [system_info.py:_save_conda():87] Saving conda packages done
+2023-10-20 13:53:37,252 INFO    HandlerThread:3305503 [system_monitor.py:probe():229] Finished publishing system info
+2023-10-20 13:53:37,260 DEBUG   SenderThread:3305503 [sender.py:send():380] send: files
+2023-10-20 13:53:37,260 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-10-20 13:53:37,270 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:53:37,270 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:53:37,846 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/conda-environment.yaml
+2023-10-20 13:53:37,847 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_created():271] file/dir created: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-metadata.json
+2023-10-20 13:53:38,037 DEBUG   SenderThread:3305503 [sender.py:send():380] send: telemetry
+2023-10-20 13:53:38,311 INFO    wandb-upload_0:3305503 [upload_job.py:push():131] Uploaded file /tmp/tmpgezpty3rwandb/riyqfngn-wandb-metadata.json
+2023-10-20 13:53:38,729 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:53:38,847 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_created():271] file/dir created: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:53:40,848 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:53:41,729 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:53:46,850 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:53:47,608 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:53:52,269 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:53:52,269 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:53:52,273 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:53:53,554 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:53:54,403 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:53:54,407 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:53:54,408 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:53:54,410 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:53:54,853 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_created():271] file/dir created: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:53:56,854 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:53:59,416 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:00,504 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:54:00,506 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:54:00,506 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:54:00,509 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:54:00,855 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/config.yaml
+2023-10-20 13:54:00,856 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:54:02,856 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:54:05,511 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:07,269 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:54:07,269 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:54:07,272 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:54:09,468 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:54:09,471 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:54:09,471 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:54:09,474 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:54:09,858 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:54:10,859 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:54:11,475 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:16,477 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:19,798 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:54:19,802 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:54:19,803 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:54:19,806 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:54:19,862 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:54:20,862 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:54:21,808 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:22,270 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:54:22,270 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:54:22,270 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:54:27,566 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:30,492 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:54:30,493 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:54:30,494 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:54:30,495 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:54:30,869 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:54:32,872 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:54:33,542 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:35,889 DEBUG   SystemMonitor:3305503 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-10-20 13:54:35,892 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:54:37,270 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:54:37,270 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:54:37,346 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:54:38,652 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:41,883 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:54:41,885 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:54:41,887 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:54:41,888 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:54:42,880 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:54:42,881 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:54:43,892 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:48,890 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:52,270 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:54:52,271 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:54:52,271 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:54:52,536 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:54:52,585 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:54:52,586 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:54:52,587 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:54:52,884 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:54:54,590 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:54:54,885 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:54:59,591 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:03,344 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:55:03,345 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:55:03,350 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:55:03,351 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:55:03,888 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:55:04,891 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:55:05,353 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:05,899 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:55:07,272 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:55:07,272 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:55:07,273 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:55:10,569 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:14,510 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:55:14,512 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:55:14,513 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:55:14,514 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:55:14,894 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:55:16,515 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:16,894 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:55:21,516 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:22,270 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:55:22,271 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:55:22,271 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:55:25,414 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:55:25,416 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:55:25,417 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:55:25,418 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:55:25,897 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:55:26,897 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:55:27,461 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:32,462 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:35,896 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:55:36,875 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:55:36,877 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:55:36,878 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:55:36,881 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:55:36,902 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:55:37,275 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:55:37,275 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:55:37,276 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:55:37,615 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:38,903 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:55:42,620 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:47,329 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:55:47,331 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:55:47,332 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:55:47,335 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:55:47,908 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:55:48,336 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:48,909 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:55:52,275 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:55:52,276 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:55:52,277 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:55:53,580 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:58,581 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:55:58,858 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:55:58,861 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:55:58,862 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:55:58,866 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:55:58,912 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:56:00,913 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:56:03,868 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:05,898 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:56:07,274 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:56:07,276 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:56:07,276 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:56:09,583 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:10,242 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:56:10,243 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:56:10,243 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:56:10,245 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:56:10,918 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:56:11,918 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:56:15,291 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:20,286 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:21,343 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:56:21,346 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:56:21,347 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:56:21,349 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:56:21,924 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:56:22,274 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:56:22,275 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:56:22,276 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:56:23,924 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:56:25,557 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:30,558 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:32,431 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:56:32,433 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:56:32,434 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:56:32,437 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:56:32,930 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:56:33,931 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:56:35,901 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:56:35,903 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:37,275 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:56:37,276 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:56:37,277 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:56:41,523 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:43,912 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:56:43,914 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:56:43,915 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:56:43,919 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:56:43,936 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:56:45,937 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:56:46,924 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:51,926 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:52,275 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:56:52,275 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:56:52,277 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:56:55,572 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:56:55,573 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:56:55,574 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:56:55,574 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:56:55,941 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:56:57,621 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:56:57,942 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:57:02,622 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:05,901 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:57:07,237 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:57:07,239 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:57:07,240 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:57:07,240 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:57:07,274 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:57:07,276 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:57:07,276 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:57:07,948 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:57:08,106 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:09,949 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:57:13,107 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:18,107 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:18,219 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:57:18,221 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:57:18,222 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:57:18,225 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:57:18,952 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:57:19,952 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:57:22,275 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:57:22,276 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:57:22,279 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:57:23,586 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:28,586 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:30,392 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:57:30,396 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:57:30,397 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:57:30,398 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:57:30,955 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:57:31,956 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:57:34,400 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:35,904 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:57:37,276 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:57:37,277 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:57:37,280 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:57:39,607 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:41,512 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:57:41,512 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:57:41,513 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:57:41,519 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:57:41,958 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:57:43,960 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:57:45,558 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:50,558 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:52,277 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:57:52,278 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:57:52,284 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:57:52,792 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:57:52,794 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:57:52,795 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:57:52,801 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:57:52,962 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:57:55,806 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:57:55,963 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:58:00,808 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:04,154 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:58:04,161 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:58:04,162 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:58:04,165 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:58:04,969 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:58:05,906 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:58:05,907 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:05,969 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:58:07,277 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:58:07,277 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:58:07,284 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:58:11,583 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:15,884 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:58:15,885 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:58:15,886 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:58:15,888 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:58:15,972 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:58:16,889 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:17,973 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:58:21,890 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:22,277 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:58:22,278 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:58:22,285 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:58:27,615 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:28,150 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:58:28,151 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:58:28,151 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:58:28,151 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:58:28,976 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:58:29,977 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:58:33,200 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:35,907 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:58:37,277 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:58:37,278 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:58:37,284 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:58:38,557 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:39,590 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:58:39,595 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:58:39,596 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:58:39,604 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:58:39,980 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:58:41,980 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:58:43,606 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:48,612 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:50,780 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:58:50,781 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:58:50,782 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:58:50,783 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:58:50,983 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:58:52,278 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:58:52,278 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:58:52,285 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:58:53,986 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:58:54,585 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:58:59,586 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:03,942 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:59:03,949 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:59:03,955 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:59:03,956 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:59:03,989 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:59:04,956 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:05,909 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:59:05,990 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:59:07,278 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:59:07,279 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:59:07,285 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:59:10,606 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:15,606 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:18,127 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:59:18,128 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:59:18,128 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:59:18,129 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:59:18,994 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:59:19,995 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:59:21,173 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:22,278 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:59:22,278 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:59:22,290 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:59:26,546 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:31,546 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:31,720 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:59:31,723 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:59:31,723 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:59:31,724 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:59:31,999 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:59:34,000 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:59:35,912 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 13:59:36,914 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:37,279 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:59:37,279 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:59:37,290 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:59:42,612 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:43,862 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:59:43,870 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:59:43,871 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:59:43,872 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:59:44,003 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:59:46,003 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:59:47,873 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:52,279 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 13:59:52,280 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 13:59:52,291 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 13:59:53,568 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 13:59:55,816 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 13:59:55,824 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 13:59:55,824 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 13:59:55,825 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 13:59:56,007 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 13:59:58,007 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 13:59:58,862 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:03,863 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:05,913 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 14:00:07,279 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 14:00:07,279 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 14:00:07,291 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 14:00:07,341 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 14:00:07,556 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 14:00:07,556 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 14:00:07,557 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 14:00:08,011 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 14:00:09,568 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:10,011 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 14:00:14,568 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:19,105 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 14:00:19,115 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 14:00:19,115 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 14:00:19,116 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 14:00:20,015 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 14:00:20,117 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:22,015 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 14:00:22,279 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 14:00:22,279 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 14:00:22,291 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 14:00:25,611 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:30,612 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:30,926 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 14:00:30,929 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 14:00:30,929 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 14:00:30,930 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 14:00:31,018 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 14:00:34,019 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 14:00:35,915 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 14:00:35,918 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:37,279 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 14:00:37,280 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 14:00:37,291 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 14:00:41,618 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:44,362 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 14:00:44,363 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 14:00:44,364 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 14:00:44,364 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 14:00:45,029 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 14:00:46,029 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 14:00:47,409 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:52,279 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 14:00:52,280 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 14:00:52,292 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 14:00:52,658 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:56,747 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 14:00:56,755 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 14:00:56,755 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 14:00:56,756 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 14:00:57,033 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 14:00:57,757 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:00:58,033 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 14:01:02,763 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:01:05,917 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 14:01:07,280 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 14:01:07,281 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 14:01:07,291 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 14:01:08,562 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:01:09,516 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 14:01:09,523 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 14:01:09,523 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 14:01:09,524 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 14:01:10,041 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 14:01:12,042 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 14:01:14,525 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:01:19,526 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:01:22,280 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: stop_status
+2023-10-20 14:01:22,281 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: stop_status
+2023-10-20 14:01:22,292 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 14:01:22,640 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: partial_history
+2023-10-20 14:01:22,642 DEBUG   SenderThread:3305503 [sender.py:send():380] send: history
+2023-10-20 14:01:22,642 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: summary_record
+2023-10-20 14:01:22,643 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 14:01:22,685 DEBUG   SenderThread:3305503 [sender.py:send():380] send: telemetry
+2023-10-20 14:01:22,685 DEBUG   SenderThread:3305503 [sender.py:send():380] send: exit
+2023-10-20 14:01:22,685 INFO    SenderThread:3305503 [sender.py:send_exit():585] handling exit code: 0
+2023-10-20 14:01:22,685 INFO    SenderThread:3305503 [sender.py:send_exit():587] handling runtime: 466
+2023-10-20 14:01:22,686 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 14:01:22,686 INFO    SenderThread:3305503 [sender.py:send_exit():593] send defer
+2023-10-20 14:01:22,686 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:22,687 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 0
+2023-10-20 14:01:22,687 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:22,687 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-10-20 14:01:22,687 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 1
+2023-10-20 14:01:22,687 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:22,687 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 1
+2023-10-20 14:01:22,687 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:22,687 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-10-20 14:01:22,687 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 2
+2023-10-20 14:01:22,688 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:22,688 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 2
+2023-10-20 14:01:22,688 INFO    HandlerThread:3305503 [system_monitor.py:finish():203] Stopping system monitor
+2023-10-20 14:01:22,689 INFO    HandlerThread:3305503 [interfaces.py:finish():202] Joined cpu monitor
+2023-10-20 14:01:22,689 DEBUG   SystemMonitor:3305503 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-10-20 14:01:22,689 DEBUG   SystemMonitor:3305503 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-10-20 14:01:22,692 INFO    HandlerThread:3305503 [interfaces.py:finish():202] Joined disk monitor
+2023-10-20 14:01:23,046 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 14:01:23,977 INFO    HandlerThread:3305503 [interfaces.py:finish():202] Joined gpu monitor
+2023-10-20 14:01:23,978 INFO    HandlerThread:3305503 [interfaces.py:finish():202] Joined memory monitor
+2023-10-20 14:01:23,978 INFO    HandlerThread:3305503 [interfaces.py:finish():202] Joined network monitor
+2023-10-20 14:01:23,978 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-20 14:01:23,978 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:23,978 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-10-20 14:01:23,979 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 3
+2023-10-20 14:01:23,979 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:23,979 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 3
+2023-10-20 14:01:23,979 DEBUG   SenderThread:3305503 [sender.py:send():380] send: stats
+2023-10-20 14:01:23,980 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: poll_exit
+2023-10-20 14:01:23,981 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:23,981 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-10-20 14:01:23,981 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 4
+2023-10-20 14:01:23,981 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:23,981 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 4
+2023-10-20 14:01:23,981 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:23,982 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-10-20 14:01:23,982 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 5
+2023-10-20 14:01:23,982 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:23,982 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 5
+2023-10-20 14:01:23,982 DEBUG   SenderThread:3305503 [sender.py:send():380] send: summary
+2023-10-20 14:01:23,983 INFO    SenderThread:3305503 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-20 14:01:23,983 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:23,983 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-10-20 14:01:23,983 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 6
+2023-10-20 14:01:23,983 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:23,983 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 6
+2023-10-20 14:01:23,984 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:23,984 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-10-20 14:01:23,989 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:01:24,046 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 14:01:24,047 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 14:01:24,282 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 7
+2023-10-20 14:01:24,282 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:24,282 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 7
+2023-10-20 14:01:24,283 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:24,283 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-10-20 14:01:24,644 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-20 14:01:25,047 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/config.yaml
+2023-10-20 14:01:25,268 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 8
+2023-10-20 14:01:25,268 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: poll_exit
+2023-10-20 14:01:25,268 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:25,269 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 8
+2023-10-20 14:01:25,269 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:25,269 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-10-20 14:01:25,269 INFO    SenderThread:3305503 [job_builder.py:build():281] Attempting to build job artifact
+2023-10-20 14:01:25,270 INFO    SenderThread:3305503 [job_builder.py:_get_source_type():393] is repo sourced job
+2023-10-20 14:01:25,273 INFO    SenderThread:3305503 [job_builder.py:build():369] adding wandb-job metadata file
+2023-10-20 14:01:25,276 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 9
+2023-10-20 14:01:25,277 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:25,277 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 9
+2023-10-20 14:01:25,277 DEBUG   SenderThread:3305503 [sender.py:send():380] send: artifact
+2023-10-20 14:01:25,645 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-20 14:01:26,047 INFO    Thread-12 :3305503 [dir_watcher.py:_on_file_modified():288] file/dir modified: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 14:01:26,572 INFO    SenderThread:3305503 [sender.py:send_artifact():1456] sent artifact job-git_github.com_cyh2004_ANN_HW2.git_codes_mlp_main.py - {'id': 'QXJ0aWZhY3Q6NjEwNjQ2NjE5', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEwODI3NDAzNQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjEwNjQ2NjE5', 'versionIndex': 2}}}
+2023-10-20 14:01:26,573 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:26,573 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-10-20 14:01:26,573 INFO    SenderThread:3305503 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-10-20 14:01:27,048 INFO    SenderThread:3305503 [dir_watcher.py:finish():388] scan: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files
+2023-10-20 14:01:27,049 INFO    SenderThread:3305503 [dir_watcher.py:finish():402] scan save: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/config.yaml config.yaml
+2023-10-20 14:01:27,049 INFO    SenderThread:3305503 [dir_watcher.py:finish():402] scan save: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/requirements.txt requirements.txt
+2023-10-20 14:01:27,053 INFO    SenderThread:3305503 [dir_watcher.py:finish():402] scan save: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/conda-environment.yaml conda-environment.yaml
+2023-10-20 14:01:27,054 INFO    SenderThread:3305503 [dir_watcher.py:finish():402] scan save: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-metadata.json wandb-metadata.json
+2023-10-20 14:01:27,054 INFO    SenderThread:3305503 [dir_watcher.py:finish():402] scan save: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log output.log
+2023-10-20 14:01:27,054 INFO    SenderThread:3305503 [dir_watcher.py:finish():402] scan save: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json wandb-summary.json
+2023-10-20 14:01:27,059 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 10
+2023-10-20 14:01:27,059 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: poll_exit
+2023-10-20 14:01:27,060 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:27,060 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 10
+2023-10-20 14:01:27,071 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:27,071 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-10-20 14:01:27,071 INFO    SenderThread:3305503 [file_pusher.py:finish():175] shutting down file pusher
+2023-10-20 14:01:27,906 INFO    wandb-upload_0:3305503 [upload_job.py:push():131] Uploaded file /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/config.yaml
+2023-10-20 14:01:27,949 INFO    wandb-upload_1:3305503 [upload_job.py:push():131] Uploaded file /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/requirements.txt
+2023-10-20 14:01:28,435 INFO    wandb-upload_4:3305503 [upload_job.py:push():131] Uploaded file /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/wandb-summary.json
+2023-10-20 14:01:28,499 INFO    wandb-upload_2:3305503 [upload_job.py:push():131] Uploaded file /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/conda-environment.yaml
+2023-10-20 14:01:29,070 INFO    wandb-upload_3:3305503 [upload_job.py:push():131] Uploaded file /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/files/output.log
+2023-10-20 14:01:29,270 INFO    Thread-11 :3305503 [sender.py:transition_state():613] send defer: 11
+2023-10-20 14:01:29,271 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:29,271 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 11
+2023-10-20 14:01:29,271 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:29,271 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-10-20 14:01:29,271 INFO    SenderThread:3305503 [file_pusher.py:join():181] waiting for file pusher
+2023-10-20 14:01:29,271 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 12
+2023-10-20 14:01:29,271 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:29,271 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 12
+2023-10-20 14:01:29,272 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:29,272 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-10-20 14:01:29,272 INFO    SenderThread:3305503 [file_stream.py:finish():595] file stream finish called
+2023-10-20 14:01:30,227 INFO    SenderThread:3305503 [file_stream.py:finish():599] file stream finish is done
+2023-10-20 14:01:30,227 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 13
+2023-10-20 14:01:30,228 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:30,228 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 13
+2023-10-20 14:01:30,228 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:30,228 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-10-20 14:01:30,228 INFO    SenderThread:3305503 [sender.py:transition_state():613] send defer: 14
+2023-10-20 14:01:30,228 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: defer
+2023-10-20 14:01:30,228 INFO    HandlerThread:3305503 [handler.py:handle_request_defer():172] handle defer: 14
+2023-10-20 14:01:30,229 DEBUG   SenderThread:3305503 [sender.py:send():380] send: final
+2023-10-20 14:01:30,229 DEBUG   SenderThread:3305503 [sender.py:send():380] send: footer
+2023-10-20 14:01:30,229 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: defer
+2023-10-20 14:01:30,229 INFO    SenderThread:3305503 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-10-20 14:01:30,229 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: internal_messages
+2023-10-20 14:01:30,230 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: poll_exit
+2023-10-20 14:01:30,230 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: poll_exit
+2023-10-20 14:01:30,230 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: server_info
+2023-10-20 14:01:30,231 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: get_summary
+2023-10-20 14:01:30,231 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: sampled_history
+2023-10-20 14:01:30,231 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: job_info
+2023-10-20 14:01:30,231 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: server_info
+2023-10-20 14:01:30,461 DEBUG   SenderThread:3305503 [sender.py:send_request():407] send_request: job_info
+2023-10-20 14:01:30,462 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: status_report
+2023-10-20 14:01:30,463 DEBUG   HandlerThread:3305503 [handler.py:handle_request():146] handle_request: shutdown
+2023-10-20 14:01:30,463 INFO    HandlerThread:3305503 [handler.py:finish():866] shutting down handler
+2023-10-20 14:01:31,462 INFO    SenderThread:3305503 [sender.py:finish():1534] shutting down sender
+2023-10-20 14:01:31,462 INFO    SenderThread:3305503 [file_pusher.py:finish():175] shutting down file pusher
+2023-10-20 14:01:31,462 INFO    SenderThread:3305503 [file_pusher.py:join():181] waiting for file pusher
+2023-10-20 14:01:31,462 INFO    WriterThread:3305503 [datastore.py:close():294] close: /dysData/ANN_HW2/codes/mlp/wandb/run-20231020_135329-wxf4lrmo/run-wxf4lrmo.wandb

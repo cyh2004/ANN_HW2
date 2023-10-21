@@ -1,0 +1,8 @@
+
+use device: cuda
+Traceback (most recent call last):
+  File "main.py", line 151, in <module>
+    mlp_model = model(X_train.shape[2], X_train.shape[3], X_train.shape[1], drop_rate=args.drop_rate)
+  File "/dysData/ANN_HW2/codes/cnn/model.py", line 221, in __init__
+    super(Model, self).__init__()
+TypeError: super(type, obj): obj must be an instance or subtype of type

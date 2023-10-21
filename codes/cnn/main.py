@@ -10,7 +10,7 @@ import torch.nn as nn
 import torch.optim as optim
 import wandb
 
-from model import Model
+from model import *
 from load_data import load_cifar_4d
 
 parser = argparse.ArgumentParser()
@@ -33,6 +33,12 @@ parser.add_argument('--inference_version', type=int, default=0,
 	help='The version for inference. Set 0 to use latest checkpoint. Default: 0')
 parser.add_argument('--nclasses', type=int, default=10,
 	help='Num of classes. Default: 10')
+parser.add_argument('--noDropout', action="store_true", default=False,
+	help="True to use dropout. Default: False")
+parser.add_argument('--noBatchNorm', action="store_true", default=False,
+	help="True to use batch normalization. Default: False")
+parser.add_argument('--switch', type=int, default=0,
+	help="switch type of model. Default: 0")
 args = parser.parse_args()
 
 
@@ -102,9 +108,20 @@ def inference(model, X): # Test Process
 
 if __name__ == '__main__':
     
+	if args.noDropout:
+		name_suffix = "noDropout"
+	elif args.noBatchNorm:
+		name_suffix = "noBatchNorm"
+	elif args.switch == 1:
+		name_suffix = "switch1"
+	elif args.switch == 2:
+		name_suffix = "switch2"
+	else:
+		name_suffix = "lr " + str(args.learning_rate) + " drop_rate " + str(args.drop_rate)
+        
 	wandb.init(
 		project="ann_hw2",
-		name="cnn",
+		name="cnn "+name_suffix,
 		config={
 			"batch_size": args.batch_size,
 			"num_epochs": args.num_epochs,
@@ -121,7 +138,17 @@ if __name__ == '__main__':
 		X_train, X_test, y_train, y_test = load_cifar_4d(args.data_dir)
 		X_val, y_val = X_train[40000:], y_train[40000:]
 		X_train, y_train = X_train[:40000], y_train[:40000]
-		mlp_model = Model(X_train.shape[2], X_train.shape[3], X_train.shape[1], drop_rate=args.drop_rate)
+		if args.noDropout:
+			model = Model_noDrop
+		elif args.noBatchNorm:
+			model = Model_noBN
+		elif args.switch == 0:
+			model = Model
+		elif args.switch == 1:
+			model = Model_switch1
+		elif args.switch == 2:
+			model = Model_switch2
+		mlp_model = model(X_train.shape[2], X_train.shape[3], X_train.shape[1], drop_rate=args.drop_rate)
 		mlp_model.to(device)
 		print(mlp_model)
 		optimizer = optim.Adam(mlp_model.parameters(), lr=args.learning_rate)

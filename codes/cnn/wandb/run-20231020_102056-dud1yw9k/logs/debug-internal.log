@@ -1,0 +1,21 @@
+2023-10-20 10:20:56,673 INFO    StreamThr :3227515 [internal.py:wandb_internal():86] W&B internal server running at pid: 3227515, started at: 2023-10-20 10:20:56.672810
+2023-10-20 10:20:56,674 DEBUG   HandlerThread:3227515 [handler.py:handle_request():146] handle_request: status
+2023-10-20 10:20:56,675 INFO    WriterThread:3227515 [datastore.py:open_for_write():85] open: /dysData/ANN_HW2/codes/cnn/wandb/run-20231020_102056-dud1yw9k/run-dud1yw9k.wandb
+2023-10-20 10:20:56,677 DEBUG   SenderThread:3227515 [sender.py:send():380] send: header
+2023-10-20 10:20:56,686 DEBUG   SenderThread:3227515 [sender.py:send():380] send: run
+2023-10-20 10:20:57,670 INFO    SenderThread:3227515 [dir_watcher.py:__init__():211] watching files in: /dysData/ANN_HW2/codes/cnn/wandb/run-20231020_102056-dud1yw9k/files
+2023-10-20 10:20:57,670 INFO    SenderThread:3227515 [sender.py:_start_run_threads():1122] run started: dud1yw9k with start time 1697768456.672529
+2023-10-20 10:20:57,680 DEBUG   HandlerThread:3227515 [handler.py:handle_request():146] handle_request: check_version
+2023-10-20 10:20:57,680 DEBUG   SenderThread:3227515 [sender.py:send_request():407] send_request: check_version
+2023-10-20 10:21:00,832 DEBUG   HandlerThread:3227515 [handler.py:handle_request():146] handle_request: shutdown
+2023-10-20 10:21:00,832 INFO    HandlerThread:3227515 [handler.py:finish():866] shutting down handler
+2023-10-20 10:21:01,248 INFO    SenderThread:3227515 [sender.py:finish():1534] shutting down sender
+2023-10-20 10:21:01,249 INFO    SenderThread:3227515 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-10-20 10:21:01,671 INFO    SenderThread:3227515 [dir_watcher.py:finish():388] scan: /dysData/ANN_HW2/codes/cnn/wandb/run-20231020_102056-dud1yw9k/files
+2023-10-20 10:21:01,672 INFO    SenderThread:3227515 [dir_watcher.py:finish():402] scan save: /dysData/ANN_HW2/codes/cnn/wandb/run-20231020_102056-dud1yw9k/files/config.yaml config.yaml
+2023-10-20 10:21:01,672 INFO    SenderThread:3227515 [file_pusher.py:finish():175] shutting down file pusher
+2023-10-20 10:21:01,672 INFO    SenderThread:3227515 [file_pusher.py:join():181] waiting for file pusher
+2023-10-20 10:21:01,681 INFO    WriterThread:3227515 [datastore.py:close():294] close: /dysData/ANN_HW2/codes/cnn/wandb/run-20231020_102056-dud1yw9k/run-dud1yw9k.wandb
+2023-10-20 10:21:02,663 INFO    wandb-upload_0:3227515 [upload_job.py:push():131] Uploaded file /dysData/ANN_HW2/codes/cnn/wandb/run-20231020_102056-dud1yw9k/files/config.yaml
+2023-10-20 10:21:03,174 INFO    SenderThread:3227515 [file_stream.py:finish():595] file stream finish called
+2023-10-20 10:21:04,038 INFO    SenderThread:3227515 [file_stream.py:finish():599] file stream finish is done
