@@ -1,0 +1,456 @@
+########################
+# Missing Files
+########################
+# .DS_Store
+
+########################
+# Additional Files
+########################
+# __pycache__
+# batch.sh
+# train
+# wandb
+# cifar-10_data
+
+########################
+# Filled Code
+########################
+# ../codes/cnn/model.py:1
+        super(BatchNorm2d, self).__init__()
+        self.weight = nn.Parameter(torch.ones(num_features))
+        self.bias = nn.Parameter(torch.zeros(num_features))
+        self.register_buffer('running_mean', torch.ones(num_features))
+        self.register_buffer('running_var', torch.zeros(num_features))
+
+        self.alpha = 0.99
+        # input: [batch_size, num_feature_map, height, width]
+        if self.training:
+            # [1, num_feature_map, 1, 1]
+            mean = torch.mean(input, (0,2,3), keepdim=True)
+            # [1, num_feature_map, 1, 1]
+            var = torch.var(input, (0,2,3), keepdim=True)
+            output = (input - mean) / torch.sqrt(var + 1e-5)
+            output = output * self.weight.reshape((1, self.weight.shape[0], 1, 1)) + self.bias.reshape((1, self.weight.shape[0], 1, 1))
+            self.running_mean = self.alpha * self.running_mean + (1 - self.alpha) * mean.reshape((self.running_mean.shape[0],))
+            self.running_var = self.alpha * self.running_var + (1 - self.alpha) * var.reshape((self.running_var.shape[0],))
+        else:
+            output = (input - self.running_mean.reshape((1, self.running_mean.shape[0], 1, 1))) / torch.sqrt(self.running_var.reshape((1, self.running_var.shape[0], 1, 1)) + 1e-5)
+            output = self.weight.reshape((1, self.weight.shape[0], 1, 1)) * output + self.bias.reshape((1, self.bias.shape[0], 1, 1))
+        return output
+
+# ../codes/cnn/model.py:2
+        if self.training:
+            mask = torch.bernoulli(torch.full(input.shape, self.p))
+            output = input.clone()
+            output[mask == 1] = 0
+            output = output / (1 - self.p)
+            # input: [batch_size, num_feature_map, height, width]
+            return output
+        else:
+            return input
+
+# ../codes/cnn/model.py:3
+        # x: [bs, 3, 32, 32]
+        self.conv1 = nn.Conv2d(channels, 128, 5)
+        # x: [bs, 128, 28, 28]
+        self.bn1 = BatchNorm2d(128)
+        self.relu1 = nn.ReLU()
+        self.dropout1 = Dropout(drop_rate)
+        # x: [bs, 128, 28, 28]
+        self.maxp1 = nn.MaxPool2d(2)
+        # x: [bs, 128, 14, 14]
+        self.conv2 = nn.Conv2d(128, 128, 5)
+        # x: [bs, 128, 10, 10]
+        self.bn2 = BatchNorm2d(128)
+        self.relu2 = nn.ReLU()
+        self.dropout2 = Dropout(drop_rate)
+        # x: [bs, 128, 10, 10]
+        self.maxp2 = nn.MaxPool2d(2)
+        # x: [bs, 128, 5, 5]
+        self.fc = nn.Linear(128*5*5, 10)
+
+# ../codes/cnn/model.py:4
+        y_hat = self.conv1(x)
+        y_hat = self.bn1(y_hat)
+        y_hat = self.relu1(y_hat)
+        y_hat = self.dropout1(y_hat)
+        y_hat = self.maxp1(y_hat)
+        y_hat = self.conv2(y_hat)
+        y_hat = self.bn2(y_hat)
+        y_hat = self.relu2(y_hat)
+        y_hat = self.dropout2(y_hat)
+        y_hat = self.maxp2(y_hat)
+        y_hat = y_hat.reshape((y_hat.shape[0], -1))
+        y_hat = self.fc(y_hat)
+        logits = y_hat
+
+# ../codes/mlp/model.py:1
+        # Parameters
+        self.weight = nn.Parameter(torch.ones(num_features))
+        self.bias = nn.Parameter(torch.zeros(num_features))
+        self.register_buffer('running_mean', torch.zeros(num_features))
+        self.register_buffer('running_var', torch.ones(num_features))
+        self.alpha = 0.99
+        if self.training:
+            mean = torch.mean(input, dim=1, keepdim=True)
+            var = torch.var(input, dim=1, keepdim=True)
+            output = (input - mean) / torch.sqrt(var + 1e-5)
+            output = self.weight.unsqueeze(0) * output + self.bias
+            self.running_mean = self.alpha * self.running_mean + (1 - self.alpha) * mean
+            self.running_var = self.alpha * self.running_var + (1 - self.alpha) * var
+        else:
+            output = self.weight.unsqueeze(0) * (input - self.running_mean) / torch.sqrt(self.running_var + 1e-5) + self.bias
+        # input: [batch_size, num_feature_map * height * widh]
+        return output
+
+# ../codes/mlp/model.py:2
+        if self.training:
+            mask = torch.bernoulli(torch.full(input.shape, self.p))
+            output = input.clone()
+            output[mask == 1] = 0
+            output = output / (1 - self.p)
+            return output
+        else:
+            return input
+
+# ../codes/mlp/model.py:3
+        self.fc1 = nn.Linear(in_num, 1024)
+        self.bn1 = BatchNorm1d(1024)
+        self.relu1 = nn.ReLU()
+        self.dropout1 = Dropout(drop_rate)
+        self.fc2 = nn.Linear(1024, nclasses)
+
+# ../codes/mlp/model.py:4
+        y_hat = self.fc1(x)
+        y_hat = self.bn1(y_hat)
+        y_hat = self.relu1(y_hat)
+        y_hat = self.dropout1(y_hat)
+        logits = self.fc2(y_hat)
+
+
+
+########################
+# References
+########################
+
+########################
+# Other Modifications
+########################
+# _codes/cnn/main.py -> ../codes/cnn/main.py
+# 11 + import wandb
+# 12 - from model import Model
+# 12 ?                   ^^^^^
+# 13 + from model import *
+# 13 ?                   ^
+# 19 - parser.add_argument('--num_epochs', type=int, default=20,
+# 19 ?                                                       ^
+# 20 + parser.add_argument('--num_epochs', type=int, default=40,
+# 20 ?                                                       ^
+# 20 -     help='Number of training epoch. Default: 20')
+# 20 ?                                              ^
+# 21 +     help='Number of training epoch. Default: 40')
+# 21 ?                                              ^
+# 34 + parser.add_argument('--nclasses', type=int, default=10,
+# 35 +     help='Num of classes. Default: 10')
+# 36 + parser.add_argument('--noDropout', action="store_true", default=False,
+# 37 +     help="True to use dropout. Default: False")
+# 38 + parser.add_argument('--noBatchNorm', action="store_true", default=False,
+# 39 +     help="True to use batch normalization. Default: False")
+# 40 + parser.add_argument('--switch', type=int, default=0,
+# 41 +     help="switch type of model. Default: 0")
+# 110 +
+# 111 +     if args.noDropout:
+# 112 +         name_suffix = "noDropout"
+# 113 +     elif args.noBatchNorm:
+# 114 +         name_suffix = "noBatchNorm"
+# 115 +     elif args.switch == 1:
+# 116 +         name_suffix = "switch1"
+# 117 +     elif args.switch == 2:
+# 118 +         name_suffix = "switch2"
+# 119 +     else:
+# 120 +         name_suffix = "lr " + str(args.learning_rate) + " drop_rate " + str(args.drop_rate)
+# 121 +
+# 122 +     wandb.init(
+# 123 +         project="ann_hw2",
+# 124 +         name="cnn "+name_suffix,
+# 125 +         config={
+# 126 +             "batch_size": args.batch_size,
+# 127 +             "num_epochs": args.num_epochs,
+# 128 +             "learning_rate": args.learning_rate,
+# 129 +             "drop_rate": args.drop_rate,
+# 130 +         }
+# 131 +     )
+# 132 +
+# 134 +     print("use device: {}".format(device))
+# 108 -         cnn_model = Model(drop_rate=args.drop_rate)
+# 141 +         if args.noDropout:
+# 142 +             model = Model_noDrop
+# 143 +         elif args.noBatchNorm:
+# 144 +             model = Model_noBN
+# 145 +         elif args.switch == 0:
+# 146 +             model = Model
+# 147 +         elif args.switch == 1:
+# 148 +             model = Model_switch1
+# 149 +         elif args.switch == 2:
+# 150 +             model = Model_switch2
+# 151 +         mlp_model = model(X_train.shape[2], X_train.shape[3], X_train.shape[1], drop_rate=args.drop_rate)
+# 109 -         cnn_model.to(device)
+# 109 ?         ^^^
+# 152 +         mlp_model.to(device)
+# 152 ?         ^^^
+# 110 -         print(cnn_model)
+# 110 ?               ^^^
+# 153 +         print(mlp_model)
+# 153 ?               ^^^
+# 111 -         optimizer = optim.Adam(cnn_model.parameters(), lr=args.learning_rate)
+# 111 ?                                ^^^
+# 154 +         optimizer = optim.Adam(mlp_model.parameters(), lr=args.learning_rate)
+# 154 ?                                ^^^
+# 115 -         # 	cnn_model = torch.load(model_path)
+# 115 ?           	^^^
+# 158 +         # 	mlp_model = torch.load(model_path)
+# 158 ?           	^^^
+# 121 -             train_acc, train_loss = train_epoch(cnn_model, X_train, y_train, optimizer)
+# 121 ?                                                 ^^^
+# 164 +             train_acc, train_loss = train_epoch(mlp_model, X_train, y_train, optimizer)
+# 164 ?                                                 ^^^
+# 124 -             val_acc, val_loss = valid_epoch(cnn_model, X_val, y_val)
+# 124 ?                                             ^^^
+# 167 +             val_acc, val_loss = valid_epoch(mlp_model, X_val, y_val)
+# 167 ?                                             ^^^
+# 129 -                 test_acc, test_loss = valid_epoch(cnn_model, X_test, y_test)
+# 129 ?                                                   ^^^
+# 172 +                 test_acc, test_loss = valid_epoch(mlp_model, X_test, y_test)
+# 172 ?                                                   ^^^
+# 130 -                 with open(os.path.join(args.train_dir, 'checkpoint_{}.pth.tar'.format(epoch)), 'wb') as fout:
+# 173 +                 # with open(os.path.join(args.train_dir, 'checkpoint_{}.pth.tar'.format(epoch)), 'wb') as fout:
+# 173 ?                ++
+# 131 -                     torch.save(cnn_model, fout)
+# 131 ?                  ^^^           ^^^
+# 174 +                 # 	torch.save(mlp_model, fout)
+# 174 ?                 + ^           ^^^
+# 132 -                 with open(os.path.join(args.train_dir, 'checkpoint_0.pth.tar'), 'wb') as fout:
+# 175 +                 # with open(os.path.join(args.train_dir, 'checkpoint_0.pth.tar'), 'wb') as fout:
+# 175 ?                ++
+# 133 -                     torch.save(cnn_model, fout)
+# 133 ?                  ^^^           ^^^
+# 176 +                 # 	torch.save(mlp_model, fout)
+# 176 ?                 + ^           ^^^
+# 179 +             wandb.log({
+# 180 +                 "epoch": epoch,
+# 181 +                 "train_loss": train_loss,
+# 182 +                 "train_acc": train_acc,
+# 183 +                 "val_loss": val_loss,
+# 184 +                 "val_acc": val_acc,
+# 185 +                 "best_epoch": best_epoch,
+# 186 +                 "best_val_acc": best_val_acc,
+# 187 +                 "test_loss": test_loss,
+# 188 +                 "test_acc": test_acc,
+# 189 +             })
+# 153 -         print("begin testing")
+# 154 -         cnn_model = Model()
+# 154 ?         ^^^
+# 207 +         mlp_model = Model()
+# 207 ?         ^^^
+# 155 -         cnn_model.to(device)
+# 155 ?         ^^^
+# 208 +         mlp_model.to(device)
+# 208 ?         ^^^
+# 158 -             cnn_model = torch.load(model_path)
+# 158 ?             ^^^
+# 211 +             mlp_model = torch.load(model_path)
+# 211 ?             ^^^
+# 164 -             test_image = X_test[i].reshape((1, 3, 32, 32))
+# 164 ?                                                 ^   ^
+# 217 +             test_image = X_test[i].reshape((1, 3 * 32 * 32))
+# 217 ?                                                 ^^   ^^
+# 165 -             result = inference(cnn_model, test_image)[0]
+# 165 ?                                ^^^
+# 218 +             result = inference(mlp_model, test_image)[0]
+# 218 ?                                ^^^
+# 222 +     wandb.finish()
+# _codes/cnn/model.py -> ../codes/cnn/model.py
+# 7 - class BatchNorm1d(nn.Module):
+# 7 ?                ^
+# 7 + class BatchNorm2d(nn.Module):
+# 7 ?                ^
+# 40 -     def __init__(self, drop_rate=0.5):
+# 61 +     def __init__(self, H, W, channels, drop_rate=0.5):
+# 61 ?                        ++++++++++++++++
+# 47 -     def forward(self, x, y=None):
+# 86 +     def forward(self, x, y=None):
+# 86 ?                                  +
+# 103 +
+# 104 +         pred = torch.argmax(logits, 1)  # Calculate the prediction result
+# 105 +         if y is None:
+# 106 +             return pred
+# 107 +         loss = self.loss(logits, y)
+# 108 +         correct_pred = (pred.int() == y.int())
+# 109 +         acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+# 110 +
+# 111 +         return loss, acc
+# 112 +
+# 113 + class Model_noDrop(nn.Module):
+# 114 +     def __init__(self, H, W, channels, drop_rate=0.5):
+# 115 +         super(Model_noDrop, self).__init__()
+# 51 -         # TODO END
+# 137 +         self.loss = nn.CrossEntropyLoss()
+# 53 -         pred = torch.argmax(logits, 1)  # Calculate the prediction result
+# 54 -         if y is None:
+# 55 -             return pred
+# 56 -         loss = self.loss(logits, y)
+# 57 -         correct_pred = (pred.int() == y.int())
+# 58 -         acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+# 139 +     def forward(self, x, y=None):
+# 157 +         pred = torch.argmax(logits, 1)  # Calculate the prediction result
+# 158 +         if y is None:
+# 159 +             return pred
+# 160 +         loss = self.loss(logits, y)
+# 161 +         correct_pred = (pred.int() == y.int())
+# 162 +         acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+# 163 +
+# 165 + class Model_noBN(nn.Module):
+# 166 +     def __init__(self, H, W, channels, drop_rate=0.5):
+# 167 +         super(Model_noBN, self).__init__()
+# 189 +         self.loss = nn.CrossEntropyLoss()
+# 190 +
+# 191 +     def forward(self, x, y=None):
+# 208 +
+# 209 +         pred = torch.argmax(logits, 1)  # Calculate the prediction result
+# 210 +         if y is None:
+# 211 +             return pred
+# 212 +         loss = self.loss(logits, y)
+# 213 +         correct_pred = (pred.int() == y.int())
+# 214 +         acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+# 215 +
+# 216 +         return loss, acc
+# 217 +
+# 218 + # 先过激活函数再过BN
+# 219 + class Model_switch1(nn.Module):
+# 220 +     def __init__(self, H, W, channels, drop_rate=0.5):
+# 221 +         super(Model_switch1, self).__init__()
+# 243 +         self.loss = nn.CrossEntropyLoss()
+# 244 +
+# 245 +     def forward(self, x, y=None):
+# 262 +
+# 263 +         pred = torch.argmax(logits, 1)  # Calculate the prediction result
+# 264 +         if y is None:
+# 265 +             return pred
+# 266 +         loss = self.loss(logits, y)
+# 267 +         correct_pred = (pred.int() == y.int())
+# 268 +         acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+# 269 +
+# 270 +         return loss, acc
+# 271 +
+# 272 + # 先过Maxpool再过Dropout
+# 273 + class Model_switch2(nn.Module):
+# 274 +     def __init__(self, H, W, channels, drop_rate=0.5):
+# 275 +         super(Model_switch2, self).__init__()
+# 297 +         self.loss = nn.CrossEntropyLoss()
+# 298 +
+# 299 +     def forward(self, x, y=None):
+# 316 +
+# 317 +         pred = torch.argmax(logits, 1)  # Calculate the prediction result
+# 318 +         if y is None:
+# 319 +             return pred
+# 320 +         loss = self.loss(logits, y)
+# 321 +         correct_pred = (pred.int() == y.int())
+# 322 +         acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+# 323 +
+# 324 +         return loss, acc
+# _codes/mlp/main.py -> ../codes/mlp/main.py
+# 11 + import wandb
+# 12 - from model import Model
+# 13 + from model import Model, Model_noBN, Model_noDrop
+# 19 - parser.add_argument('--num_epochs', type=int, default=20,
+# 19 ?                                                       ^
+# 20 + parser.add_argument('--num_epochs', type=int, default=40,
+# 20 ?                                                       ^
+# 20 -     help='Number of training epoch. Default: 20')
+# 20 ?                                              ^
+# 21 +     help='Number of training epoch. Default: 40')
+# 21 ?                                              ^
+# 34 + parser.add_argument('--nclasses', type=int, default=10,
+# 35 +     help='Num of classes. Default: 10')
+# 36 + parser.add_argument('--noDropout', action="store_true", default=False,
+# 37 +     help="True to use dropout. Default: False")
+# 38 + parser.add_argument('--noBatchNorm', action="store_true", default=False,
+# 39 +     help="True to use batch normalization. Default: False")
+# 66 -
+# 83 -
+# 106 +
+# 107 +     if args.noDropout:
+# 108 +         name_suffix = "noDropout"
+# 109 +     elif args.noBatchNorm:
+# 110 +         name_suffix = "noBatchNorm"
+# 111 +     else:
+# 112 +         name_suffix = ""
+# 113 +
+# 114 +     wandb.init(
+# 115 +         project="ann_hw2",
+# 116 +         name="mlp "+name_suffix,
+# 117 +         config = {
+# 118 +             'learning_rate': args.learning_rate,
+# 119 +             'batch_size': args.batch_size,
+# 120 +             'max_epoch': args.num_epochs,
+# 121 +         }
+# 122 +     )
+# 123 +
+# 125 +     print("using device: {}".format(device))
+# 108 -         mlp_model = Model(drop_rate=drop_rate)
+# 132 +         if args.noDropout:
+# 133 +             model = Model_noDrop
+# 134 +         elif args.noBatchNorm:
+# 135 +             model = Model_noBN
+# 136 +         else:
+# 137 +             model = Model
+# 138 +         mlp_model = model(X_train.shape[1], args.nclasses, drop_rate=args.drop_rate)
+# 166 +             wandb.log({
+# 167 +                 "epoch": epoch,
+# 168 +                 "train_loss": train_loss,
+# 169 +                 "train_acc": train_acc,
+# 170 +                 "val_loss": val_loss,
+# 171 +                 "val_acc": val_acc,
+# 172 +                 "best_epoch": best_epoch,
+# 173 +                 "best_val_acc": best_val_acc,
+# 174 +                 "test_loss": test_loss,
+# 175 +                 "test_acc": test_acc,
+# 176 +             })
+# 209 +     wandb.finish()
+# _codes/mlp/model.py -> ../codes/mlp/model.py
+# 40 -     def __init__(self, drop_rate=0.5):
+# 57 +     def __init__(self, in_num, nclasses, drop_rate=0.5):
+# 57 ?                        ++++++++++++++++++
+# 88 +
+# 89 + class Model_noDrop(nn.Module):
+# 90 +     def __init__(self, in_num, nclasses, drop_rate=0.5):
+# 91 +         super(Model_noDrop, self).__init__()
+# 100 +         self.loss = nn.CrossEntropyLoss()
+# 101 +
+# 102 +     def forward(self, x, y=None):
+# 112 +
+# 113 +         pred = torch.argmax(logits, 1)  # Calculate the prediction result
+# 114 +         if y is None:
+# 115 +             return pred
+# 116 +         loss = self.loss(logits, y)
+# 117 +         correct_pred = (pred.int() == y.int())
+# 118 +         acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+# 119 +
+# 120 +         return loss, acc
+# 121 +
+# 122 + class Model_noBN(nn.Module):
+# 123 +     def __init__(self, in_num, nclasses, drop_rate=0.5):
+# 124 +         super(Model_noBN, self).__init__()
+# 133 +         self.loss = nn.CrossEntropyLoss()
+# 134 +
+# 135 +     def forward(self, x, y=None):
+# 145 +
+# 146 +         pred = torch.argmax(logits, 1)  # Calculate the prediction result
+# 147 +         if y is None:
+# 148 +             return pred
+# 149 +         loss = self.loss(logits, y)
+# 150 +         correct_pred = (pred.int() == y.int())
+# 151 +         acc = torch.mean(correct_pred.float())  # Calculate the accuracy in this mini-batch
+# 152 +
+# 153 +         return loss, acc
+

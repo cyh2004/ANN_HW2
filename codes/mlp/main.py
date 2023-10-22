@@ -8,7 +8,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import wandb
+# import wandb
 
 from model import Model, Model_noBN, Model_noDrop
 from load_data import load_cifar_2d
@@ -111,15 +111,15 @@ if __name__ == '__main__':
 	else:
 		name_suffix = ""
     
-	wandb.init(
-		project="ann_hw2",
-		name="mlp "+name_suffix,
-		config = {
-			'learning_rate': args.learning_rate,
-			'batch_size': args.batch_size,
-			'max_epoch': args.num_epochs,
-		}
-	)
+	# wandb.init(
+	# 	project="ann_hw2",
+	# 	name="mlp "+name_suffix,
+	# 	config = {
+	# 		'learning_rate': args.learning_rate,
+	# 		'batch_size': args.batch_size,
+	# 		'max_epoch': args.num_epochs,
+	# 	}
+	# )
     
 	device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 	print("using device: {}".format(device))
@@ -163,17 +163,17 @@ if __name__ == '__main__':
 				# 	torch.save(mlp_model, fout)
 
 			epoch_time = time.time() - start_time
-			wandb.log({
-				"epoch": epoch,
-				"train_loss": train_loss,
-				"train_acc": train_acc,
-				"val_loss": val_loss,
-				"val_acc": val_acc,
-				"best_epoch": best_epoch,
-				"best_val_acc": best_val_acc,
-				"test_loss": test_loss,
-				"test_acc": test_acc,
-			})
+			# wandb.log({
+			# 	"epoch": epoch,
+			# 	"train_loss": train_loss,
+			# 	"train_acc": train_acc,
+			# 	"val_loss": val_loss,
+			# 	"val_acc": val_acc,
+			# 	"best_epoch": best_epoch,
+			# 	"best_val_acc": best_val_acc,
+			# 	"test_loss": test_loss,
+			# 	"test_acc": test_acc,
+			# })
 			print("Epoch " + str(epoch) + " of " + str(args.num_epochs) + " took " + str(epoch_time) + "s")
 			print("  learning rate:                 " + str(optimizer.param_groups[0]['lr']))
 			print("  training loss:                 " + str(train_loss))
@@ -206,4 +206,4 @@ if __name__ == '__main__':
 			if result == y_test[i]:
 				count += 1
 		print("test accuracy: {}".format(float(count) / len(X_test)))
-	wandb.finish()
+	# wandb.finish()

@@ -1,0 +1,108 @@
+{
+    "os": "Linux-5.10.102.1-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+    "python": "3.9.16",
+    "heartbeatAt": "2023-10-22T02:39:33.688424",
+    "startedAt": "2023-10-22T02:39:31.642567",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--learning_rate",
+        "0.0001"
+    ],
+    "state": "running",
+    "program": "/home/chen/ANN/2023-HW2/codes/cnn/main.py",
+    "codePath": "codes/cnn/main.py",
+    "git": {
+        "remote": "git@github.com:cyh2004/ANN_HW2.git",
+        "commit": "e564733bb2457d95b80d956ea48abc33746f368e"
+    },
+    "email": "chenying21@mails.tsinghua.edu.cn",
+    "root": "/home/chen/ANN/2023-HW2",
+    "host": "LAPTOP-I34U4N77",
+    "username": "chen",
+    "executable": "/home/chen/anaconda3/envs/d2l/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2295.5999999999995,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2295.6,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 250.98248672485352,
+        "used": 80.8435287475586
+    },
+    "gpu": "NVIDIA GeForce MX450",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce MX450",
+            "memory_total": 2147483648
+        }
+    ],
+    "memory": {
+        "total": 10.797035217285156
+    }
+}
